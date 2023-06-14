@@ -1,10 +1,23 @@
+/* .header {
+    display: grid;
+    background-color: #526D82;
+}
+
+.nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-items: center;
+} */
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 5rem;
-    background-color: #8a2b06;
+    background-color: #27374D;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -14,12 +27,28 @@
     z-index: 10;
 }
 
+.main-image {
+    width: 100%;
+    height: 35rem;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.main-image img {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateZ(-0.1deg) translateY(-2rem) translateX(-0.011rem);
+}
+
+
+
 
 .button {
     cursor: pointer;
     font: inherit;
     border: none;
-    background-color: #4d1601;
+    background-color: #526D82;
     color: white;
     padding: 0.75rem 3rem;
     display: flex;
@@ -31,7 +60,7 @@
 
 .button:hover,
 .button:active {
-    background-color: #2c0d00;
+    background-color: #9DB2BF;
 }
 
 .icon {
@@ -41,7 +70,7 @@
 }
 
 .badge {
-    background-color: #b94517;
+    background-color: #9DB2BF;
     padding: 0.25rem 1rem;
     border-radius: 25px;
     margin-left: 1rem;
@@ -50,7 +79,7 @@
 
 .button:hover .badge,
 .button:active .badge {
-    background-color: #92320c;
+    background-color: #27374D;
 }
 
 .bump {

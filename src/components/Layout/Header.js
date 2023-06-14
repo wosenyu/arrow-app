@@ -1,14 +1,28 @@
 import { Fragment } from "react";
-import { Icon, IconButton } from '@chakra-ui/react'
-import { BsFillCartFill } from "react-icons/bs";
 import classes from './Header.module.css'
 import Card from './Card'
+import aImg from '../assets/chuttersnap.jpg'
+
+import Cart from './Cart'
+
+
 const Header = props => {
+
+
     return <Fragment>
+
         <header className={classes.header}>
-            <h1> React Arrow </h1>
-            <Card />
+
+            <h2>  Arrows </h2>
+
+
+            <Cart />
         </header>
+
+        <div className={classes['main-image']}>
+            <img src={aImg}></img>
+        </div>
+
     </Fragment>
 };
 
