@@ -2,10 +2,13 @@
 import Input from '../UI/Input'
 import { useRef, useState } from 'react';
 import classes from './Arrow.module.css'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer';
 
 const ArrowForm = (props) => {
 
     const [amountIsvalid, setAmountIsvalid] = useState(true)
+    const [rotate, setRotate] = useState(false)
 
     const inputRef = useRef();
 
@@ -22,6 +25,25 @@ const ArrowForm = (props) => {
 
         props.onAddToCart(enterAmountNum)
     }
+
+    const controls = useAnimation();
+
+    const handleClick = () => {
+
+        animateButton();
+    };
+
+    const animateButton = async () => {
+
+        const shakeAnimation = {
+            x: [-10, 10, -10, 10, 0],
+            y: [-10, 10, -10, 10, 0]
+        };
+
+        // Trigger the animation
+        await controls.start(shakeAnimation);
+    };
+
     return (
 
         <form className={classes.form} onSubmit={handleSubmit}>
@@ -33,7 +55,7 @@ const ArrowForm = (props) => {
                 step: '1',
                 defaultValue: '1'
             }} />
-            <button>+ ADD</button>
+            <motion.button onClick={handleClick} whileHover={{ scale: 1.3 }} animate={controls}>+ ADD</motion.button>
             {!amountIsvalid && <p>Enter valid amount</p>}
         </form>
         // <FormControl onSubmit={handleSubmit}>

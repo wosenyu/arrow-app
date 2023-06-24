@@ -16,8 +16,8 @@ import { useInView } from 'react-intersection-observer';
 const ArrowCarousel = () => {
 
     const [ref, inView] = useInView({
-        triggerOnce: true, // Animations will trigger only once
-        threshold: 0.1, // Adjust this value based on your requirements
+        triggerOnce: true,
+        threshold: 0.1,
     });
 
     return (

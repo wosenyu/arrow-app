@@ -19,8 +19,8 @@ const ArrowItem = props => {
 
 
     const [ref, inView] = useInView({
-        triggerOnce: false, // Animations will trigger only once
-        threshold: 0.1, // Adjust this value based on your requirements
+        triggerOnce: false,
+        threshold: 0.1,
     });
 
     return (
