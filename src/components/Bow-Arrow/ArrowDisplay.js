@@ -10,19 +10,19 @@ const DUMMY_MEALS = [
         price: 325.55,
     },
     {
-        id: 'm2',
+        id: 'q2',
         name: 'Qing Dynasty Bow',
         description: 'A Qing specialty Bow!',
         price: 120.36,
     },
     {
-        id: 'm3',
+        id: 'o3',
         name: 'Olympic Style Bow',
         description: 'Olmypic ready Bow',
         price: 265.73,
     },
     {
-        id: 'm4',
+        id: 'r4',
         name: 'Modern Recurve Bow',
         description: 'Starter Recurve Bow',
         price: 100.68,
