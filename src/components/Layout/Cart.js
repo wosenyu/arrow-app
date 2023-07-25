@@ -2,13 +2,12 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { React, useState, useContext, useEffect } from 'react'
 import CartItem from './CartItem'
-import Card from '../Layout/Card'
 import { Icon } from '@chakra-ui/react'
 import { BsFillCartFill } from "react-icons/bs";
 import CartContext from '../store/Cart-Context';
 import classes from './Header.module.css'
 import { color } from 'framer-motion';
-
+import { useNavigate } from 'react-router-dom';
 
 const Cart = props => {
 
@@ -39,6 +38,12 @@ const Cart = props => {
     const hasItem = cartContx.items.length > 0;
     const { items } = cartContx;
     const btnClasses = `${classes.button} ${btnBump ? classes.bump : ''}`
+    const navigate = useNavigate();
+
+    const navigateToCheckout = () => {
+
+        navigate('/CheckOut', { state: { items: cartContx.items, totalAmount: cartContx.totalAmount, num: numOfCartItem } })
+    }
 
     useEffect(() => {
         if (items.length === 0) {
@@ -78,7 +83,7 @@ const Cart = props => {
                 <Button variant="light" onClick={handleClose}>
                     Close
                 </Button>
-                {hasItem && <Button variant="dark" onClick={handleClose}>
+                {hasItem && <Button variant="dark" onClick={navigateToCheckout} onSubmit={navigateToCheckout} >
                     Order
                 </Button>}
 

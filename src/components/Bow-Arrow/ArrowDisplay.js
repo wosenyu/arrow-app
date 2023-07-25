@@ -2,7 +2,7 @@ import classes from '../Bow-Arrow/Arrow.module.css'
 import Card from '../UI/Card'
 import ArrowItem from './ArrowItem'
 
-const DUMMY_MEALS = [
+const DUMMY_Arrows = [
     {
         id: 'm1',
         name: 'Ming Dynasty Bow',
@@ -30,7 +30,7 @@ const DUMMY_MEALS = [
 ];
 
 const ArrowDisplay = () => {
-    const arrowList = DUMMY_MEALS.map(arrow => <ArrowItem id={arrow.id} key={arrow.id} name={arrow.name} description={arrow.description} price={arrow.price} />)
+    const arrowList = DUMMY_Arrows.map(arrow => <ArrowItem id={arrow.id} key={arrow.id} name={arrow.name} description={arrow.description} price={arrow.price} />)
     return (
 
         <section className={classes.arrow}>
